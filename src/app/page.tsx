@@ -2,9 +2,9 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt, FaPlane, FaBuilding, FaGlobe, FaRobot, FaBrain } from 'react-icons/fa';
-import { HiAcademicCap, HiBriefcase, HiCode, HiLightningBolt, HiChip } from 'react-icons/hi';
-import { SiSalesforce, SiVerizon, SiOpenai, SiReplit, SiVercel, SiVisualstudiocode } from 'react-icons/si';
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt, FaPlane, FaBuilding, FaGlobe, FaRobot, FaBrain, FaCloud, FaMicrosoft } from 'react-icons/fa';
+import { HiAcademicCap, HiBriefcase, HiCode, HiLightningBolt, HiChip, HiCloud } from 'react-icons/hi';
+import { SiSalesforce, SiVerizon, SiOpenai, SiReplit, SiVercel, SiAmazon, SiNetlify, SiHeroku, SiGooglecloud, SiDigitalocean, SiDocker, SiKubernetes, SiGithubactions, SiJenkins, SiTerraform, SiGitlab } from 'react-icons/si';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -113,6 +113,60 @@ export default function Home() {
                     .map((skill) => (
                     <span key={skill} className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm animate-fade-in">
                       {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="bg-white rounded-xl shadow-lg p-8 section-transition">
+                <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                  <HiLightningBolt className="w-6 h-6 mr-2 text-purple-600" />
+                  Salesforce Deployment Tools
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    { name: 'Salesforce DX', icon: <SiSalesforce className="w-5 h-5" /> },
+                    { name: 'Change Sets', icon: <SiSalesforce className="w-5 h-5" /> },
+                    { name: 'Flosum', icon: <SiSalesforce className="w-5 h-5" /> },
+                    { name: 'Copado', icon: <SiSalesforce className="w-5 h-5" /> },
+                    { name: 'Vlocode', icon: <SiSalesforce className="w-5 h-5" /> },
+                    { name: 'Jenkins', icon: <SiJenkins className="w-5 h-5" /> },
+                    { name: 'GitHub Actions', icon: <SiGithubactions className="w-5 h-5" /> },
+                    { name: 'GitLab CI/CD', icon: <SiGitlab className="w-5 h-5" /> },
+                    { name: 'Ant Migration Tool', icon: <SiSalesforce className="w-5 h-5" /> },
+                    { name: 'Metadata API', icon: <SiSalesforce className="w-5 h-5" /> },
+                    { name: 'SFDX CLI', icon: <SiSalesforce className="w-5 h-5" /> },
+                    { name: 'VS Code', icon: <HiCode className="w-5 h-5" /> }
+                  ].map((tool) => (
+                    <span key={tool.name} className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm animate-fade-in flex items-center gap-2">
+                      {tool.icon}
+                      {tool.name}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="bg-white rounded-xl shadow-lg p-8 section-transition">
+                <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                  <HiCloud className="w-6 h-6 mr-2 text-blue-600" />
+                  Cloud & Infrastructure
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    { name: 'AWS', icon: <SiAmazon className="w-5 h-5" /> },
+                    { name: 'Azure', icon: <FaMicrosoft className="w-5 h-5" /> },
+                    { name: 'Vercel', icon: <SiVercel className="w-5 h-5" /> },
+                    { name: 'Netlify', icon: <SiNetlify className="w-5 h-5" /> },
+                    { name: 'Heroku', icon: <SiHeroku className="w-5 h-5" /> },
+                    { name: 'Google Cloud', icon: <SiGooglecloud className="w-5 h-5" /> },
+                    { name: 'DigitalOcean', icon: <SiDigitalocean className="w-5 h-5" /> },
+                    { name: 'Docker', icon: <SiDocker className="w-5 h-5" /> },
+                    { name: 'Kubernetes', icon: <SiKubernetes className="w-5 h-5" /> },
+                    { name: 'GitHub Actions', icon: <SiGithubactions className="w-5 h-5" /> },
+                    { name: 'Jenkins', icon: <SiJenkins className="w-5 h-5" /> },
+                    { name: 'Terraform', icon: <SiTerraform className="w-5 h-5" /> }
+                  ].map((tool) => (
+                    <span key={tool.name} className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm animate-fade-in flex items-center gap-2">
+                      {tool.icon}
+                      {tool.name}
                     </span>
                   ))}
                 </div>
