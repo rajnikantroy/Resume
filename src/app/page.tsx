@@ -250,67 +250,28 @@ export default function Home() {
             <h2 className="text-3xl font-bold text-gray-900 mb-6 gradient-text">Certifications</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                {
-                  name: 'Salesforce Certified OmniStudio Developer',
-                  icon: <SiSalesforce className="w-6 h-6 text-blue-600" />
-                },
-                {
-                  name: 'Salesforce Certified OmniStudio Communications Developer II',
-                  icon: <SiSalesforce className="w-6 h-6 text-blue-600" />
-                },
-                {
-                  name: 'Salesforce Certified Industries CPQ Developer',
-                  icon: <SiSalesforce className="w-6 h-6 text-blue-600" />
-                },
-                {
-                  name: 'Salesforce Certified Administrator',
-                  icon: <SiSalesforce className="w-6 h-6 text-blue-600" />
-                },
-                {
-                  name: 'Salesforce Certified Platform App Builder',
-                  icon: <SiSalesforce className="w-6 h-6 text-blue-600" />
-                },
-                {
-                  name: 'Salesforce Certified Platform Developer I',
-                  icon: <SiSalesforce className="w-6 h-6 text-blue-600" />
-                },
-                {
-                  name: 'Salesforce Certified Platform Developer II',
-                  icon: <SiSalesforce className="w-6 h-6 text-blue-600" />
-                },
-                {
-                  name: 'Salesforce Certified Service Cloud Consultant',
-                  icon: <SiSalesforce className="w-6 h-6 text-blue-600" />
-                },
-                {
-                  name: 'Salesforce Certified Sales Cloud Consultant',
-                  icon: <SiSalesforce className="w-6 h-6 text-blue-600" />
-                },
-                {
-                  name: 'Salesforce Certified Community Cloud Consultant',
-                  icon: <SiSalesforce className="w-6 h-6 text-blue-600" />
-                },
-                {
-                  name: 'Salesforce Certified Einstein Analytics and Discovery Consultant',
-                  icon: <SiSalesforce className="w-6 h-6 text-blue-600" />
-                },
-                {
-                  name: 'Salesforce Certified Marketing Cloud Email Specialist',
-                  icon: <SiSalesforce className="w-6 h-6 text-blue-600" />
-                }
+                'Salesforce Certified OmniStudio Developer',
+                'Salesforce Certified OmniStudio Communications Developer II',
+                'Salesforce Certified Industries CPQ Developer',
+                'Salesforce Certified Administrator',
+                'Salesforce Certified Platform App Builder',
+                'Salesforce Certified Platform Developer I',
+                'Salesforce Certified Platform Developer II',
+                'Salesforce Certified Service Cloud Consultant',
+                'Salesforce Certified Sales Cloud Consultant',
+                'Salesforce Certified Community Cloud Consultant',
+                'Salesforce Certified Einstein Analytics and Discovery Consultant',
+                'Salesforce Certified Marketing Cloud Email Specialist'
               ].map((cert) => (
                 <motion.div 
-                  key={cert.name}
+                  key={cert}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
                   viewport={{ once: true }}
                   className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow section-transition"
                 >
-                  <div className="flex items-center space-x-3">
-                    {cert.icon}
-                    <h3 className="text-lg font-semibold text-gray-900">{cert.name}</h3>
-                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900">{cert}</h3>
                 </motion.div>
               ))}
             </div>
