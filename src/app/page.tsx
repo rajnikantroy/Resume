@@ -3,8 +3,9 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt, FaPlane, FaBuilding, FaGlobe, FaRobot, FaBrain, FaCloud, FaMicrosoft } from 'react-icons/fa';
-import { HiAcademicCap, HiBriefcase, HiCode, HiLightningBolt, HiChip, HiCloud } from 'react-icons/hi';
+import { HiAcademicCap, HiBriefcase, HiCode, HiLightningBolt, HiChip } from 'react-icons/hi';
 import { SiSalesforce, SiVerizon, SiOpenai, SiReplit, SiVercel, SiAmazon, SiNetlify, SiHeroku, SiGooglecloud, SiDigitalocean, SiDocker, SiKubernetes, SiGithubactions, SiJenkins, SiTerraform, SiGitlab } from 'react-icons/si';
+import React from 'react';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -34,8 +35,8 @@ export default function Home() {
           <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-4 gradient-text">
             Rajni Kant Roy
           </h1>
-          <p className="text-xl md:text-2xl text-gray-600 mb-8 animate-float">
-            Senior Developer | Team Lead | Architect
+          <p className="text-xl md:text-2xl text-gray-600 mb-8 animate-fade-in">
+            Salesforce Senior Developer | Team Lead | Architect
           </p>
           <div className="flex justify-center space-x-6">
             <Link 
@@ -146,7 +147,7 @@ export default function Home() {
               </div>
               <div className="bg-white rounded-xl shadow-lg p-8 section-transition">
                 <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
-                  <HiCloud className="w-6 h-6 mr-2 text-blue-600" />
+                  <FaCloud className="w-6 h-6 mr-2 text-blue-600" />
                   Cloud & Infrastructure
                 </h3>
                 <div className="flex flex-wrap gap-2">
@@ -358,10 +359,26 @@ export default function Home() {
                   company: 'Mass Customization Online',
                   client: 'Capgemini',
                   icon: <FaGlobe className="w-6 h-6 text-purple-600" />,
-                  role: 'Vlocity Consultant/Lead Developer',
+                  role: 'Salesforce Industries Consultant/Lead Developer',
                   period: 'Apr 2020 - May 2021',
                   location: 'Sweden',
-                  tech: ['Vlocity Digital Platform', 'Digital Commerce API', 'CPQ API', 'APIGEE', 'Swagger'],
+                  tech: ['Salesforce Industries Digital Platform', 'Digital Commerce API', 'CPQ API', 'APIGEE', 'Swagger'],
+                  responsibilities: [
+                    'Requirement analysis and documentation',
+                    'User story estimation and sprint planning',
+                    'Development of POCs and prototypes',
+                    'API integration and documentation'
+                  ],
+                  teamSize: '10-12 members'
+                },
+                {
+                  company: 'MC Sales',
+                  client: 'Capgemini',
+                  icon: <FaGlobe className="w-6 h-6 text-purple-600" />,
+                  role: 'Salesforce Industries Consultant/Lead Developer',
+                  period: 'Jan 2020 - Mar 2020',
+                  location: 'Sweden',
+                  tech: ['Salesforce Industries Digital Platform', 'Digital Commerce API', 'CPQ API', 'APIGEE', 'Swagger'],
                   responsibilities: [
                     'Requirement analysis and documentation',
                     'User story estimation and sprint planning',
@@ -374,10 +391,10 @@ export default function Home() {
                   company: 'CRM Fiber B2B',
                   client: 'Capgemini',
                   icon: <FaGlobe className="w-6 h-6 text-purple-600" />,
-                  role: 'Salesforce Vlocity Consultant/Lead Developer',
+                  role: 'Salesforce Industries Consultant/Lead Developer',
                   period: 'Apr 2019 - Dec 2019',
                   location: 'Sweden',
-                  tech: ['Vlocity', 'Salesforce', 'Apex', 'Lightning'],
+                  tech: ['Salesforce Industries', 'Salesforce', 'Apex', 'Lightning', 'CPQ', 'CLM', 'AngularJS'],
                   responsibilities: [
                     'Client communication and requirement gathering',
                     'User story development and execution',
@@ -406,10 +423,10 @@ export default function Home() {
                   company: 'Verizon Business Market B2C',
                   client: 'Accenture',
                   icon: <SiVerizon className="w-6 h-6 text-red-600" />,
-                  role: 'Salesforce & Omnistudio Developer',
+                  role: 'Salesforce & Salesforce Industries Developer',
                   period: 'Sep 2017 - Sep 2018',
                   location: 'Pune, India',
-                  tech: ['Vlocity', 'Salesforce', 'Apex', 'Lightning', 'Community Builder'],
+                  tech: ['Salesforce Industries', 'Salesforce', 'Apex', 'Lightning', 'Community Builder'],
                   responsibilities: [
                     'Development of OmniScripts and DataRaptors',
                     'Lightning Component development',
@@ -570,7 +587,9 @@ export default function Home() {
                   className={`${company.color} rounded-xl p-6 flex flex-col items-center justify-center hover:shadow-lg transition-shadow`}
                 >
                   {company.icon}
-                  <h3 className={`mt-4 text-lg font-semibold ${company.textColor}`}>{company.name}</h3>
+                  <span className={`mt-4 text-lg font-semibold ${company.textColor}`}>
+                    {company.name}
+                  </span>
                 </motion.div>
               ))}
             </div>
@@ -586,7 +605,7 @@ export default function Home() {
               <div className="bg-white rounded-xl shadow-lg p-8 section-transition">
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">US Patent</h3>
                 <p className="text-gray-600 mb-4">
-                  "Intelligent Code Quality Monitoring" (Patent No: 15/819,958)
+                  Intelligent Code Quality Monitoring (Patent No: 15/819,958)
                 </p>
                 <Link 
                   href="https://patents.google.com/patent/US10572367B2/en"
@@ -631,15 +650,52 @@ export default function Home() {
               <div className="space-y-4">
                 <div className="flex items-center">
                   <FaEnvelope className="w-5 h-5 text-gray-600 mr-3" />
-                  <span className="text-gray-600">rajnikantroy2@gmail.com</span>
+                  <button 
+                    className="text-gray-600 hover:text-blue-600 transition-colors"
+                    onClick={(e) => {
+                      const button = e.currentTarget;
+                      const originalText = button.textContent;
+                      button.textContent = 'rajnikantroy61@gmail.com';
+                      setTimeout(() => {
+                        button.textContent = originalText;
+                      }, 5000);
+                    }}
+                  >
+                    *****roy61@gmail.com
+                  </button>
                 </div>
                 <div className="flex items-center">
                   <FaPhone className="w-5 h-5 text-gray-600 mr-3" />
-                  <span className="text-gray-600">+46-0730949905</span>
+                  <button 
+                    className="text-gray-600 hover:text-blue-600 transition-colors"
+                    onClick={(e) => {
+                      const button = e.currentTarget;
+                      const originalText = button.textContent;
+                      button.textContent = '+46-0730949905';
+                      setTimeout(() => {
+                        button.textContent = originalText;
+                      }, 5000);
+                    }}
+                  >
+                    +46-*****9905
+                  </button>
                 </div>
                 <div className="flex items-center">
                   <FaPhone className="w-5 h-5 text-gray-600 mr-3" />
-                  <span className="text-gray-600">+91-7620896789 (WhatsApp)</span>
+                  <button 
+                    className="text-gray-600 hover:text-blue-600 transition-colors"
+                    onClick={(e) => {
+                      const button = e.currentTarget;
+                      const originalText = button.textContent;
+                      button.textContent = '+91-7620896789';
+                      setTimeout(() => {
+                        button.textContent = originalText;
+                      }, 5000);
+                    }}
+                  >
+                    +91-*****6789
+                  </button>
+                  <span className="text-sm text-gray-500 ml-2">(WhatsApp)</span>
                 </div>
                 <div className="flex items-center">
                   <FaMapMarkerAlt className="w-5 h-5 text-gray-600 mr-3" />
