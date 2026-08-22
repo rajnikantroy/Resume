@@ -13,10 +13,9 @@ body {
   overflow-x: hidden;
 }
 
-/* Animated background pattern */
+/* Subtle dotted backdrop behind the hero. */
 .bg-pattern {
-  background-image: 
-    radial-gradient(circle at 25px 25px, rgba(0, 0, 0, 0.05) 2%, transparent 0%),
+  background-image: radial-gradient(circle at 25px 25px, rgba(0, 0, 0, 0.05) 2%, transparent 0%),
     radial-gradient(circle at 75px 75px, rgba(0, 0, 0, 0.05) 2%, transparent 0%);
   background-size: 100px 100px;
   animation: patternMove 20s linear infinite;
@@ -29,66 +28,6 @@ body {
   100% {
     background-position: 100px 100px;
   }
-}
-
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Custom animations */
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideIn {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.8s ease-out forwards;
-}
-
-.animate-slide-in {
-  animation: slideIn 0.8s ease-out forwards;
-}
-
-/* Card hover effects */
-.card-hover {
-  transition: all 0.3s ease;
-}
-
-.card-hover:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Custom scrollbar */
@@ -109,43 +48,21 @@ html {
   background: #555;
 }
 
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(45deg, #3b82f6, #8b5cf6);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-/* Section transitions */
-.section-transition {
-  transition: all 0.5s ease;
-}
-
-.section-transition:hover {
-  transform: scale(1.02);
-}
-
-@layer components {
-  .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500;
+/*
+ * Respect the OS "reduce motion" setting for CSS-driven animation and for
+ * anchor scrolling. Framer Motion is handled separately by MotionProvider.
+ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
-  
-  .gradient-border {
-    @apply relative before:absolute before:inset-0 before:rounded-lg before:p-[1px] before:bg-gradient-to-r before:from-blue-500 before:to-purple-500 before:-z-10;
-  }
-  
-  .card {
-    @apply bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300;
-  }
-  
-  .section-title {
-    @apply text-4xl md:text-5xl font-bold mb-12 text-center gradient-text;
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
-
-.bg-grid-pattern {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
-  background-size: 20px 20px;
-} 
