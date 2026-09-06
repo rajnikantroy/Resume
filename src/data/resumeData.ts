@@ -108,9 +108,9 @@ export const resumeData: ResumeData = {
   personal: {
     name: 'Rajni Kant Roy',
     role: 'Salesforce Technical Architect & Team Lead',
-    tagline: '11+ Years of Salesforce Development, Architecture & Leadership',
+    tagline: '11+ Years of Deep Engineering, Salesforce Architecture & Systems Leadership',
     summary:
-      'Seasoned Salesforce Technical Architect with 11+ years of experience leading, designing, and delivering complex enterprise solutions across telecom, media, and airlines domains. Proven track record in Salesforce Industries, OmniStudio, CPQ, AWS, AI integrations, and high-performance team leadership.',
+      'Seasoned Enterprise Technologist & Salesforce Architect with 11+ years of experience leading, designing, and delivering complex enterprise solutions across telecom, media, and airlines domains. Proven track record in Salesforce Industries, OmniStudio, CPQ, AWS, AI integrations, patents, and high-performance team leadership.',
     experienceYears: '11+ Years',
     location: 'Pune, India',
     email: 'rajnikantroyy@gmail.com',
@@ -1756,12 +1756,12 @@ export const resumeData: ResumeData = {
     {
       title: 'Radius Runner',
       type: 'Android App',
-      dateOrNumber: 'Android Mobile',
+      dateOrNumber: 'Ongoing • Not Published Yet',
       description:
-        'Privacy-first off-grid communication and Bluetooth safety app built with React Native (Expo) and custom BLE modules. Features X25519/Ed25519 encrypted P2P messaging, nearby radar with RSSI distance estimation, anti-stalking tracker detection, decentralized local polls, and radio-enforced GDPR privacy.',
-      tags: ['React Native (Expo)', 'Offline BLE Transport', 'X25519 & Ed25519', 'Anti-Stalker Radar'],
+        'Privacy-first off-grid communication and Bluetooth safety app built with React Native (Expo) and custom native BLE modules. Currently in active ongoing development (pre-release). Features X25519/Ed25519 encrypted P2P messaging, nearby radar with RSSI distance estimation, anti-stalking tracker detection, decentralized local polls, and radio-enforced GDPR privacy.',
+      tags: ['Ongoing Development', 'React Native (Expo)', 'Offline BLE Transport', 'X25519 & Ed25519', 'Anti-Stalker Radar'],
       details: {
-        tagline: 'Off-Grid Proximity Chat & Bluetooth Tracker Safety',
+        tagline: 'Off-Grid Proximity Chat & Bluetooth Tracker Safety (Ongoing Development • Pre-Release)',
         architecture: '100% Serverless BLE Mesh & GATT Peer-to-Peer Network',
         techStack: [
           'React Native (Expo SDK 52)',
@@ -1812,10 +1812,10 @@ export const resumeData: ResumeData = {
     {
       title: 'JanusOne',
       type: 'Android App',
-      dateOrNumber: 'Android Mobile',
+      dateOrNumber: 'Ongoing • Not Published Yet',
       description:
-        'Inspired by Janus—the two-headed deity looking both ways—to vigilantly monitor incoming and outgoing network traffic simultaneously. Built in Kotlin & Jetpack Compose with an on-device non-root firewall (VPN DNS loop), anti-stalker BLE radar, WTMP intruder journal, and anti-AI voice-clone defense with 100% on-device privacy.',
-      tags: ['Kotlin & Compose', 'Dual-Direction Firewall', 'BLE Radar & Stalkerware', 'Anti-Voice Clone AI'],
+        'Inspired by Janus—the two-headed deity looking both ways—to vigilantly monitor incoming and outgoing network traffic simultaneously. Currently in active ongoing development (pre-release). Built in Kotlin & Jetpack Compose with an on-device non-root firewall (VPN DNS loop), anti-stalker BLE radar, WTMP intruder journal, and anti-AI voice-clone defense with 100% on-device privacy.',
+      tags: ['Ongoing Development', 'Kotlin & Compose', 'Dual-Direction Firewall', 'BLE Radar & Stalkerware', 'Anti-Voice Clone AI'],
       details: {
         tagline: 'Dual-Direction Traffic Sentinel & On-Device Counter-Surveillance Toolkit',
         architecture: 'Kotlin Clean Architecture + Jetpack Compose + Local Android VpnService',
@@ -2051,12 +2051,12 @@ export const resumeData: ResumeData = {
     {
       title: 'BeforeYouSpeak',
       type: 'Android App',
-      dateOrNumber: 'Android Mobile',
+      dateOrNumber: 'Ongoing • Not Published Yet',
       description:
-        'Mindful telephony HUD and impulse-control companion built in Kotlin & Jetpack Compose. Injects an interactive pre-call floating HUD with a 4-7-8 breathing ring, adaptive persona prompts (Corporate Diplomat, Savage Bestie, Paranoid Lawyer), anti-spoof scrutiny, and room privacy monitoring.',
-      tags: ['Kotlin & Compose', 'Floating Call HUD', 'Persona Engine', 'Mindful Telephony'],
+        'Mindful telephony HUD and impulse-control companion built in Kotlin & Jetpack Compose. Currently in active ongoing development (pre-release). Injects an interactive pre-call floating HUD with a 4-7-8 breathing ring, adaptive persona prompts (Corporate Diplomat, Savage Bestie, Paranoid Lawyer), anti-spoof scrutiny, and room privacy monitoring.',
+      tags: ['Ongoing Development', 'Kotlin & Compose', 'Floating Call HUD', 'Persona Engine', 'Mindful Telephony'],
       details: {
-        tagline: 'Pre-Call Reality Check & Mindful Telephony Heads-Up Display',
+        tagline: 'Pre-Call Reality Check & Mindful Telephony Heads-Up Display (Ongoing Development • Pre-Release)',
         architecture: 'Native Android Service + WindowManager Floating HUD + Clean Architecture',
         techStack: [
           'Kotlin 2.0+',

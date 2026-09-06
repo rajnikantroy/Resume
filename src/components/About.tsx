@@ -56,7 +56,7 @@ export default function About() {
               </div>
 
               <h3 className="text-2xl font-bold text-gray-900">
-                Salesforce Technical Architect & Engineering Leader
+                Enterprise Technologist & Salesforce Architect
               </h3>
               <p className="text-gray-700 leading-relaxed">
                 With <strong>11+ years of hands-on experience</strong> in Salesforce development, leadership, and architecture, I have spearheaded large-scale digital transformations across the <strong>telecom, media, and airlines</strong> domains.

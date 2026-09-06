@@ -24,11 +24,12 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: 'Rajni Kant Roy | Salesforce Technical Architect & Team Lead',
+  title: 'Rajni Kant Roy | Enterprise Technologist & Salesforce Architect',
   description:
     '11+ Years of Salesforce Development, Architecture & Leadership in Telecom, Media, and Airlines domains. Experienced in Salesforce Industries, OmniStudio, CPQ, AWS, and AI Integrations.',
   keywords: [
     'Rajni Kant Roy',
+    'Enterprise Technologist',
     'Salesforce Architect',
     'Salesforce Technical Architect',
     'OmniStudio Developer',
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Rajni Kant Roy', url: 'https://github.com/rajnikantroy' }],
   openGraph: {
-    title: 'Rajni Kant Roy | Salesforce Technical Architect & Team Lead',
+    title: 'Rajni Kant Roy | Enterprise Technologist & Salesforce Architect',
     description:
       '11+ Years of Salesforce Development, Architecture & Leadership in Telecom, Media, and Airlines domains.',
     type: 'website',

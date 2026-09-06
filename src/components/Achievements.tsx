@@ -34,9 +34,9 @@ function typeIcon(type: Innovation['type'], className: string) {
 }
 
 function linkLabel(type: Innovation['type']) {
-  if (type === 'Chrome Extension') return 'Chrome Web Store';
-  if (type === 'US Patent') return 'Google Patents';
-  return 'Store Listing';
+  if (type === 'Chrome Extension') return 'Read Live Chrome Web Store';
+  if (type === 'US Patent') return 'View on Google Patents';
+  return 'View on Google Play';
 }
 
 export default function Achievements() {
@@ -155,7 +155,13 @@ export default function Achievements() {
                           {item.type}
                         </span>
                       </div>
-                      <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-gray-100 text-gray-700">
+                      <span
+                        className={`text-xs font-semibold px-2.5 py-0.5 rounded-full ${
+                          item.type === 'Android App'
+                            ? 'bg-amber-50 text-amber-800 border border-amber-200'
+                            : 'bg-gray-100 text-gray-700'
+                        }`}
+                      >
                         {item.dateOrNumber}
                       </span>
                     </div>
@@ -272,7 +278,7 @@ export default function Achievements() {
               rel="noopener noreferrer"
               className="sm:hidden inline-flex items-center gap-1.5 px-4 py-2 bg-blue-600 text-white rounded-xl text-xs font-semibold"
             >
-              <span>Store Link</span>
+              <span>{linkLabel(selectedApp.type)}</span>
               <FaExternalLinkAlt className="w-2.5 h-2.5" />
             </a>
           ) : null
@@ -280,6 +286,99 @@ export default function Achievements() {
       >
         {details && (
           <>
+            {/* Live Chrome Web Store / Patent Link Banner Card */}
+            {selectedApp?.link && (
+              <div className="bg-gradient-to-r from-blue-50/90 via-indigo-50/60 to-white p-6 sm:p-7 rounded-3xl border border-blue-200/90 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-5">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-blue-600 text-white rounded-2xl shadow-xs shrink-0 mt-0.5">
+                    {selectedApp.type === 'Chrome Extension' ? (
+                      <FaChrome className="w-6 h-6" />
+                    ) : selectedApp.type === 'US Patent' ? (
+                      <FaAward className="w-6 h-6 text-amber-300" />
+                    ) : (
+                      <FaGooglePlay className="w-6 h-6 text-emerald-300" />
+                    )}
+                  </div>
+                  <div className="space-y-1">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <span className="text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-800 border border-blue-200">
+                        {selectedApp.type === 'Chrome Extension'
+                          ? 'Official Chrome Extension'
+                          : selectedApp.type === 'US Patent'
+                          ? 'Granted US Patent'
+                          : 'Android Mobile App'}
+                      </span>
+                      <span className="text-xs text-emerald-700 font-semibold flex items-center gap-1">
+                        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                        {selectedApp.type === 'Chrome Extension'
+                          ? 'Live on Chrome Web Store'
+                          : selectedApp.type === 'US Patent'
+                          ? 'Live on Google Patents'
+                          : 'Live on Google Play'}
+                      </span>
+                    </div>
+                    <h4 className="text-base sm:text-lg font-bold text-gray-900">
+                      {selectedApp.title} — {selectedApp.type === 'Chrome Extension' ? 'Google Chrome Web Store' : selectedApp.type === 'US Patent' ? 'USPTO Patent Publication' : 'Google Play Store'}
+                    </h4>
+                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed max-w-2xl">
+                      {selectedApp.type === 'Chrome Extension'
+                        ? 'Published and actively maintained on the Google Chrome Web Store. Read live user reviews, inspect permissions, and install directly to your browser.'
+                        : selectedApp.type === 'US Patent'
+                        ? 'Official patent documentation granted by the United States Patent and Trademark Office. View full patent claims, diagrams, and legal specifications.'
+                        : 'Published on Google Play. Inspect live Android device capabilities, permissions, and release notes.'}
+                    </p>
+                  </div>
+                </div>
+
+                <a
+                  href={selectedApp.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white rounded-2xl text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition-all shrink-0 self-start md:self-center"
+                >
+                  {selectedApp.type === 'Chrome Extension' ? (
+                    <FaChrome className="w-4 h-4" />
+                  ) : (
+                    <FaExternalLinkAlt className="w-3.5 h-3.5" />
+                  )}
+                  <span>{selectedApp.type === 'Chrome Extension' ? 'Read Live Web Store Page' : linkLabel(selectedApp.type)}</span>
+                  <FaExternalLinkAlt className="w-3 h-3 ml-0.5" />
+                </a>
+              </div>
+            )}
+
+            {/* Ongoing Development Banner for Android Apps */}
+            {selectedApp?.type === 'Android App' && (
+              <div className="bg-gradient-to-r from-amber-50/90 via-emerald-50/40 to-white p-6 sm:p-7 rounded-3xl border border-amber-200/90 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-5">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-emerald-600 text-white rounded-2xl shadow-xs shrink-0 mt-0.5">
+                    <FaGooglePlay className="w-6 h-6 text-white" />
+                  </div>
+                  <div className="space-y-1">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <span className="text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-900 border border-amber-300">
+                        Native Android Application
+                      </span>
+                      <span className="text-xs text-amber-800 font-semibold flex items-center gap-1.5">
+                        <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
+                        Ongoing Development • Not Published Yet
+                      </span>
+                    </div>
+                    <h4 className="text-base sm:text-lg font-bold text-gray-900">
+                      {selectedApp.title} — Active Pre-Release Engineering
+                    </h4>
+                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed max-w-2xl">
+                      This project is currently in ongoing active development and private build testing. It is not yet published on public app stores. Complete system architecture, native modules, and capabilities are specified below.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="px-4 py-2 rounded-2xl bg-amber-100/90 border border-amber-300 text-amber-900 text-xs font-bold shrink-0 self-start md:self-center">
+                  Pre-Release Build
+                </div>
+              </div>
+            )}
+
             {/* Architecture */}
             <div className="bg-white p-6 sm:p-8 rounded-3xl border border-gray-200/80 shadow-xs space-y-4">
               <div className="flex items-center gap-2 text-gray-900 font-bold text-sm uppercase tracking-wider">
